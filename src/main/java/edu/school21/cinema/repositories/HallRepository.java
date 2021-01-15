@@ -1,4 +1,9 @@
 package edu.school21.cinema.repositories;
 
-public interface HallRepository {
+import edu.school21.cinema.models.Hall;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface HallRepository extends CrudRepository<Hall, Long> {
 }

@@ -9,28 +9,28 @@ import java.io.IOException;
 
 public class ImageFileService {
 
-//    @Autowired
-//    private CinemaConfig cinemaConfig;
-//
-//    public void saveImage(long imageId, Part part) throws IOException {
-//        File save = new File(cinemaConfig.getFileStoragePath(), String.valueOf(imageId));
-//        if (!save.createNewFile()) {
-//            throw new IOException("File already exists!");
-//        }
-//        final String absolutePath = save.getAbsolutePath();
-//        part.write(absolutePath);
-//    }
-//
-//    public File getImageFile(String imageId) {
-//        try {
-//            File result = new File(cinemaConfig.getFileStoragePath() + "/" + imageId);
-//            if (result.exists()) {
-//                return result;
-//            } else {
-//                return null;
-//            }
-//        } catch (Exception e) {
-//            return null;
-//        }
-//    }
+    @Autowired
+    private CinemaConfig cinemaConfig;
+
+    public void saveImage(long imageId, Part part) throws IOException {
+        File save = new File(cinemaConfig.getFileStoragePath(), String.valueOf(imageId));
+        if (!save.createNewFile()) {
+            throw new IOException("File already exists!");
+        }
+        final String absolutePath = save.getAbsolutePath();
+        part.write(absolutePath);
+    }
+
+    public File getImageFile(String imageId) {
+        try {
+            File result = new File(cinemaConfig.getFileStoragePath() + "/" + imageId);
+            if (result.exists()) {
+                return result;
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
