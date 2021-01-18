@@ -22,10 +22,18 @@
 	<table class="datatable">
 		<tr>
 			<th>Session ID</th>
+			<th>Session Date</th>
+			<th>Session Time</th>
+			<th>Film</th>
+			<th>Hall</th>
 		</tr>
         <#list model["sessionsList"] as session>
 			<tr>
 				<td>${session.sessionId}</td>
+				<td>${session.dateString}</td>
+				<td>${session.timeString}</td>
+				<td>${session.film.name}</td>
+				<td>${session.hall.number}</td>
 			</tr>
         </#list>
 	</table>

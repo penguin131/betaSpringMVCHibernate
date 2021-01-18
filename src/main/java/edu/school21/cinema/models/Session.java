@@ -1,5 +1,7 @@
 package edu.school21.cinema.models;
 
+import edu.school21.cinema.services.DateConvertUtil;
+
 import javax.persistence.*;
 
 @Entity
@@ -56,5 +58,13 @@ public class Session {
 
     public void setTime(long time) {
         this.time = time;
+    }
+
+    public String getDateString() {
+        return DateConvertUtil.getDate(this.time);
+    }
+
+    public String getTimeString() {
+        return DateConvertUtil.getTime(this.time);
     }
 }
