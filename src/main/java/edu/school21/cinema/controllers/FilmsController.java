@@ -27,7 +27,7 @@ public class FilmsController {
 
     @GetMapping
     public String init(@ModelAttribute("model") ModelMap model) {
-        List<Film> list = new ArrayList<>(repository.findAll());
+        List<Film> list = repository.findAll();
         list.forEach(f->{
             if (imageFileService.getImageFile(String.valueOf(f.getFilmId())) != null) {
                 f.setImageLink("/admin/panel/films/get/" + f.getFilmId());

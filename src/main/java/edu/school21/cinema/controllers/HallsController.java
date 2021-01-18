@@ -20,7 +20,7 @@ public class HallsController {
 
     @GetMapping
     public String init(@ModelAttribute("model") ModelMap model) {
-        List<Hall> list = new ArrayList<>(repository.findAll());
+        List<Hall> list = repository.findAll();
         model.addAttribute("hallsList", list);
         return "halls";
     }
