@@ -7,6 +7,7 @@
 		.datatable tr {border:1px solid #888}
 		.datatable td {padding:2px;border:1px solid #888}
 		#content { padding 5px; margin: 5px; text-align: center}
+		.poster { max-width: 250px; max-height: 250px; }
 		fieldset { width: 300px; padding: 5px; margin-bottom: 0; }
 		legend { font-weight: bold; }
 	</style>
@@ -30,7 +31,7 @@
 					<td>${film.year?int?c}</td>
 					<td>${film.minAge}</td>
 					<td>${film.description}</td>
-					<td><a target="_blank" rel="noopener noreferrer" href="${film.imageLink}">${film.imageLink}</a></td>
+					<td><img src="${film.imageLink}" class="poster"></td>
 				</form>
 			</tr>
         </#list>
