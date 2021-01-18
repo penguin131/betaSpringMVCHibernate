@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Hall {
     @Id
     @Column(name = "hall_id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int hallId;
     @Column(name = "number")
     private int number;

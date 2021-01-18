@@ -2,6 +2,7 @@ package edu.school21.cinema.repositories;
 
 import edu.school21.cinema.models.Hall;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,5 +16,12 @@ public class HallRepositoryImpl implements HallRepository {
     @Override
     public List<Hall> findAll() {
         return entityManager.createQuery("from Hall", Hall.class).getResultList();
+    }
+
+    @Override
+    @Transactional
+    public void save(Hall hall) {
+        entityManager.persist(hall);
+        entityManager.flush();
     }
 }
